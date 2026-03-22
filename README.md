@@ -165,6 +165,7 @@ See:
 - `references/route-presets.md`
 - `research-public-usage-notes.md`
 - `examples.md`
+- `presentations/claw-notebooklm-overview-ru.html`
 
 ## Practical rules from public usage
 - one notebook should usually map to one topic, workflow, or cycle of work
@@ -179,6 +180,10 @@ See:
 claw-notebooklm status
 claw-notebooklm auth-relay
 claw-notebooklm routes
+claw-notebooklm route-info research-dossier
+claw-notebooklm raw list
+```
+klm routes
 claw-notebooklm route-info research-dossier
 claw-notebooklm raw list
 ```
