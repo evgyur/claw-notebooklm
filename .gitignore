@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.notebooklm/
+storage_state.json
+browser_profile/
+playwright-report/
+/tmp/
