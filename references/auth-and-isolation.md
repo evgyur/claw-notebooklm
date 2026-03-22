@@ -65,6 +65,7 @@ Practical rule:
 - do not treat NotebookLM as the default sink for sensitive internal documents
 - prefer public, low-risk, or explicitly approved sources unless the user's policy context is clear
 - in enterprise contexts, call this risk out directly
+- always validate important outputs against citations instead of trusting the first summary blindly
 
 ## Failure wording
 

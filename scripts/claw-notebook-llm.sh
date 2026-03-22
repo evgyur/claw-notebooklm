@@ -39,6 +39,26 @@ case "$cmd" in
     need_runtime
     exec "$PYTHON" "$ROOT_DIR/scripts/auth_via_browser_relay.py" "$@"
     ;;
+  routes|route-list)
+    need_runtime
+    exec "$PYTHON" "$ROOT_DIR/scripts/route_tools.py" list "$@"
+    ;;
+  route-info)
+    need_runtime
+    exec "$PYTHON" "$ROOT_DIR/scripts/route_tools.py" show "$@"
+    ;;
+  route-prompt)
+    need_runtime
+    exec "$PYTHON" "$ROOT_DIR/scripts/route_tools.py" prompt "$@"
+    ;;
+  route-init)
+    need_runtime
+    exec "$PYTHON" "$ROOT_DIR/scripts/route_tools.py" init "$@"
+    ;;
+  route-ask)
+    need_runtime
+    exec "$PYTHON" "$ROOT_DIR/scripts/route_tools.py" ask "$@"
+    ;;
   login)
     need_runtime
     exec "$NOTEBOOKLM" login "$@"

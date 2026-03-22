@@ -49,7 +49,14 @@ If needed, inspect indexed text:
 notebooklm source fulltext <source_id> --json
 ```
 
-## 6) Multi-agent safe mode
+## 6) Practical constraints from public usage
+- do not overload a notebook with unrelated sources
+- if quality drops, split the work into smaller bounded notebooks
+- validate important summaries against citations
+- treat audio overviews as a strong first pass, not a full substitute for text review
+- remember that large/complex projects may run into NotebookLM source limits, so route design should favor bounded notebooks
+
+## 7) Multi-agent safe mode
 For subagents or parallel runs:
 - do not rely on shared active context
 - keep notebook IDs explicit in every command
@@ -58,7 +65,7 @@ For subagents or parallel runs:
 export NOTEBOOKLM_HOME=/tmp/notebooklm-$RUN_ID
 ```
 
-## 7) High-value route recipes from public usage
+## 8) High-value route recipes from public usage
 
 ### A) Research dossier
 - create notebook per topic

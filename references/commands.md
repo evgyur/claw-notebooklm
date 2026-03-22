@@ -6,6 +6,11 @@ claw-notebook-llm status
 claw-notebook-llm install
 claw-notebook-llm auth-relay
 claw-notebook-llm login
+claw-notebook-llm routes
+claw-notebook-llm route-info research-dossier
+claw-notebook-llm route-prompt study-pack summary
+claw-notebook-llm route-init research-dossier "AI market map" https://example.com/a.pdf https://example.com/b
+claw-notebook-llm route-ask research-dossier <notebook_id> summary
 claw-notebook-llm raw list
 ```
 

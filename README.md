@@ -94,6 +94,27 @@ claw-notebook-llm raw source add "https://www.youtube.com/watch?v=..."
 claw-notebook-llm raw ask -n <notebook_id> "Summarize the main points"
 ```
 
+## Route presets
+
+The repo now exposes first-class route helpers so people can actually access the strongest NotebookLM workflows instead of reading about them only.
+
+```bash
+claw-notebook-llm routes
+claw-notebook-llm route-info research-dossier
+claw-notebook-llm route-prompt study-pack summary
+claw-notebook-llm route-init research-dossier "AI market map" https://example.com/a.pdf https://example.com/b
+claw-notebook-llm route-ask research-dossier <notebook_id> summary
+```
+
+Available route IDs:
+- `research-dossier`
+- `interview-prep`
+- `study-pack`
+- `domain-kb`
+- `review-pack`
+- `language-learning`
+- `book-to-audio`
+
 ## Skill triggers
 
 Primary:
@@ -118,16 +139,19 @@ Your exported NotebookLM auth stays on your machine under `~/.notebooklm/` unles
 ## Repo layout
 
 - `SKILL.md` — OpenClaw router skill
-- `references/` — command recipes, auth, workflows, compatibility notes, and route ideas from real public usage
+- `references/` — command recipes, auth, workflows, compatibility notes, route ideas, and preset docs
+- `routes/routes.json` — machine-readable route preset catalog
 - `research-public-usage-notes.md` — raw public research notes used to derive route ideas
+- `examples.md` — exact example workflows with commands
 - `scripts/install.sh` — local runtime installer
 - `scripts/claw-notebook-llm.sh` — wrapper command
 - `scripts/auth_via_browser_relay.py` — Browser Relay auth export
+- `scripts/route_tools.py` — route discovery/init/ask helper
 - `references/notebooklm-py/` — pinned upstream submodule
 
 ## Route ideas from real users
 
-Based on public research, the strongest NotebookLM routes are:
+Based on public research plus a Perplexity cross-check, the strongest NotebookLM routes are:
 - topic-specific knowledge bases
 - interview prep notebooks
 - study packs from PDFs + lectures + YouTube
@@ -139,12 +163,23 @@ Based on public research, the strongest NotebookLM routes are:
 
 See:
 - `references/routes-from-the-wild.md`
+- `references/route-presets.md`
 - `research-public-usage-notes.md`
+- `examples.md`
+
+## Practical rules from public usage
+- one notebook should usually map to one topic, workflow, or cycle of work
+- staged workflows beat one-shot prompting
+- validate important outputs against citations
+- audio overviews are great as a first pass, not as a final truth source
+- for work usage, be explicit about privacy and internal-doc policy
 
 ## Quick sanity check
 
 ```bash
 claw-notebook-llm status
 claw-notebook-llm auth-relay
+claw-notebook-llm routes
+claw-notebook-llm route-info research-dossier
 claw-notebook-llm raw list
 ```

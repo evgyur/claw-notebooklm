@@ -44,8 +44,25 @@ Observed summary themes in search results:
 - trying to use one notebook for every domain
 - unsafely uploading internal docs without policy guardrails
 
+## Perplexity cross-check (2026-03-22)
+
+A Perplexity Sonar pass was used as a second source to validate the broad shape of public NotebookLM usage.
+
+Recurring confirmations:
+- research summarization and note-taking remains a dominant pattern
+- content creation / briefing / FAQ generation is common
+- transcript/meeting/interview analysis is a real workflow
+- long-term personal knowledge base usage exists, but bounded notebooks still work better than giant catch-alls
+
+Recurring complaints reinforced by Perplexity results:
+- source limits and scalability pain
+- blind trust in summaries without citation review
+- audio overviews are valuable, but not enough on their own for exact work
+- export/integration friction appears often in public sentiment
+
 ## Translation into repo changes
 - add route ideas doc
+- add first-class route helpers so routes are actually usable from the wrapper
 - bias examples toward bounded notebooks
 - explicitly document privacy caution for internal/work docs
-- promote staged route patterns instead of magical one-liners
+- explicitly document citation review and staged route patterns instead of magical one-liners

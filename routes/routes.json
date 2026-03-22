@@ -1,0 +1,102 @@
+{
+  "routes": [
+    {
+      "id": "research-dossier",
+      "title": "Research dossier",
+      "summary": "Mixed-media research notebook for synthesis across PDFs, URLs, notes, and YouTube.",
+      "best_for": ["market research", "competitive research", "topic synthesis", "strategy briefs"],
+      "source_checklist": ["PDFs", "web pages", "notes", "YouTube videos"],
+      "recommended_artifacts": ["briefing doc", "report", "audio overview"],
+      "cautions": ["Keep the notebook bounded to one topic.", "Ask for contradictions and unknowns explicitly."],
+      "prompts": {
+        "map": "Map this source set. What are the main themes, contradictions, unknowns, and missing evidence? Return concise structured bullets with citations.",
+        "summary": "Create an executive briefing across all sources. Include: main takeaways, contradictions, risks, opportunities, and a concrete 30-day action plan. Synthesize across sources and cite them.",
+        "extract": "Extract action items, decisions, open questions, and recommended follow-up research from these sources. Return structured bullets with citations."
+      }
+    },
+    {
+      "id": "interview-prep",
+      "title": "Interview prep",
+      "summary": "Notebook for interview preparation from job description, resume, company materials, and notes.",
+      "best_for": ["job interviews", "role prep", "company research"],
+      "source_checklist": ["job description", "resume/CV", "company pages", "product docs", "prep notes"],
+      "recommended_artifacts": ["question bank", "talking points", "mock interview notes"],
+      "cautions": ["Use one notebook per company or role.", "Keep sensitive personal data intentional and minimal."],
+      "prompts": {
+        "map": "Map this interview context. What does the company likely care about, what are the role themes, and where are the biggest fit gaps or proof gaps in my profile? Return concise bullets.",
+        "summary": "Prepare me for this interview. Give: likely questions, the strongest talking points, probable objections, and the best stories/examples to use. Keep it concrete and source-grounded.",
+        "extract": "Extract a drill pack for interview practice: 10 likely questions, short answer outlines, proof points from my background, and 5 smart questions I should ask them."
+      }
+    },
+    {
+      "id": "study-pack",
+      "title": "Study pack",
+      "summary": "Notebook for study guides, flashcards, quizzes, and audio from course materials.",
+      "best_for": ["exam prep", "course revision", "self-study"],
+      "source_checklist": ["lecture slides", "papers", "notes", "lecture recordings", "YouTube lectures"],
+      "recommended_artifacts": ["study guide", "flashcards", "quiz", "audio overview"],
+      "cautions": ["Split oversized courses into topic notebooks.", "Validate answers on weak or dense source sets."],
+      "prompts": {
+        "map": "Map this study set. What are the core concepts, dependencies between concepts, likely exam themes, and weak areas a student should focus on first?",
+        "summary": "Create a study guide from these sources. Include: core concepts, concise explanations, likely exam themes, and the minimum set of things to memorize or understand deeply.",
+        "extract": "Extract review materials from these sources: key terms, likely exam questions, common confusions, and short memory cues."
+      }
+    },
+    {
+      "id": "domain-kb",
+      "title": "Domain knowledge base",
+      "summary": "Bounded work notebook for one function or domain such as legal, ops, compliance, support, or product.",
+      "best_for": ["ops", "compliance", "support", "legal", "product"],
+      "source_checklist": ["manuals", "SOPs", "policies", "forms", "reference docs"],
+      "recommended_artifacts": ["briefing doc", "policy summary", "checklist"],
+      "cautions": ["Do not upload sensitive internal documents casually.", "Prefer one notebook per domain or process, not all-company memory."],
+      "prompts": {
+        "map": "Map this domain notebook. What are the major process areas, policy boundaries, recurring tasks, and places where the sources disagree or are incomplete?",
+        "summary": "Summarize this domain for practical day-to-day use. Include the core rules, recurring workflows, common mistakes, and where a human should double-check.",
+        "extract": "Extract operational outputs from these sources: checklists, action steps, exception cases, and escalation triggers."
+      }
+    },
+    {
+      "id": "review-pack",
+      "title": "Performance review pack",
+      "summary": "Notebook for turning wins, feedback, and artifacts into a coherent self-review or evidence pack.",
+      "best_for": ["performance reviews", "quarterly reviews", "impact summaries"],
+      "source_checklist": ["wins log", "feedback", "project artifacts", "notes", "docs"],
+      "recommended_artifacts": ["self-review draft", "impact summary", "evidence bullets"],
+      "cautions": ["One notebook per review cycle works best.", "Evidence quality matters more than volume."],
+      "prompts": {
+        "map": "Map this review evidence. What are the strongest impact themes, repeated signals, evidence gaps, and weak claims that need better proof?",
+        "summary": "Create a concise performance review summary from these sources. Focus on impact, outcomes, concrete examples, collaboration signals, and measurable evidence.",
+        "extract": "Extract self-review bullets from these sources: wins, impact statements, evidence points, growth areas, and examples I can reuse in a review conversation."
+      }
+    },
+    {
+      "id": "language-learning",
+      "title": "Language learning",
+      "summary": "Comprehensible-input notebook from texts/videos in a target language, with glossary and listening support.",
+      "best_for": ["language learning", "listening practice", "vocabulary building"],
+      "source_checklist": ["articles", "texts", "videos", "transcripts"],
+      "recommended_artifacts": ["glossary", "flashcards", "audio overview"],
+      "cautions": ["Choose sources close to your actual level.", "Prefer topic-bounded input rather than random material."],
+      "prompts": {
+        "map": "Map these language-learning sources. What vocabulary themes, grammar patterns, and comprehension obstacles appear most often?",
+        "summary": "Explain these sources in simpler target-language-friendly terms. Focus on comprehension, core ideas, and the smallest useful vocabulary set to learn first.",
+        "extract": "Extract a study pack from these sources: glossary, example sentences, comprehension questions, and phrases worth repeating aloud."
+      }
+    },
+    {
+      "id": "book-to-audio",
+      "title": "Book to audio",
+      "summary": "Long document or book notebook optimized for chapter mapping, synthesis, and audio overview generation.",
+      "best_for": ["books", "long reports", "dense documents"],
+      "source_checklist": ["long PDF", "book", "large document"],
+      "recommended_artifacts": ["chapter map", "audio overview", "reading questions"],
+      "cautions": ["Large books may need to be split if quality drops.", "Audio overview is a first pass, not a substitute for checking details."],
+      "prompts": {
+        "map": "Map this long document. Give me the chapter/section structure, the core claims, and where the most important arguments or evidence are concentrated.",
+        "summary": "Create a concise but complete summary of this long document. Preserve the structure, key claims, and major takeaways without flattening everything into generic bullets.",
+        "extract": "Extract a guided-reading pack from this document: key questions to think about, the most important claims, memorable examples, and where to reread carefully."
+      }
+    }
+  ]
+}

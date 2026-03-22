@@ -53,6 +53,11 @@ Use this skill when the user says:
 - `/claw-notebook-llm status` → binary + paths + auth check
 - `/claw-notebook-llm install` → local install guidance / wrapper setup
 - `/claw-notebook-llm auth relay` → export auth from Browser Relay into NotebookLM
+- `/claw-notebook-llm routes` → list route presets
+- `/claw-notebook-llm route-info <id>` → inspect one route preset
+- `/claw-notebook-llm route-prompt <id> <phase>` → print a built-in route prompt
+- `/claw-notebook-llm route-init <id> <title> [sources...]` → create a notebook, add sources, wait, print next prompts
+- `/claw-notebook-llm route-ask <id> <notebook_id> <phase>` → run one built-in route prompt against a notebook
 - `/claw-notebook-llm login` → interactive browser login
 - `/claw-notebook-llm list` → list notebooks
 - `/claw-notebook-llm create <title>` → create notebook
@@ -85,6 +90,7 @@ Use this skill when the user says:
 - [Commands](references/commands.md)
 - [Auth and isolation](references/auth-and-isolation.md)
 - [Workflows](references/workflows.md)
+- [Route presets](references/route-presets.md)
 - [Routes from the wild](references/routes-from-the-wild.md)
 - [Manual review checklist](references/manual-review-checklist.md)
 - [Backward compatibility map](references/backward-compat-map.md)
@@ -126,3 +132,5 @@ Use this skill when the user says:
 - Browser Relay auth flow is documented without depending on a custom relay skill.
 - Upstream repo remains connected as a real git submodule.
 - Wrapper script exists for install/status/auth/raw passthrough.
+on (`routes`, `route-info`, `route-prompt`, `route-init`, `route-ask`).
+auth/raw passthrough.
