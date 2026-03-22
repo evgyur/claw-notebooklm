@@ -58,7 +58,35 @@ For subagents or parallel runs:
 export NOTEBOOKLM_HOME=/tmp/notebooklm-$RUN_ID
 ```
 
-## 7) Destructive path
+## 7) High-value route recipes from public usage
+
+### A) Research dossier
+- create notebook per topic
+- add PDFs + URLs + YouTube together
+- wait for all sources
+- ask for synthesis, contradictions, unknowns, and action plan
+- export briefing/report
+
+### B) Interview prep
+- create notebook per company/role
+- add job description, resume, company docs, product pages, notes
+- ask for likely questions, role-fit gaps, stories, objections, and drill prompts
+
+### C) Study pack
+- add lecture slides, papers, notes, and video lectures
+- ask for summary and concept map
+- generate study guide, flashcards, quiz, and optional audio overview
+
+### D) Domain knowledge base
+- create one notebook per function/domain
+- load manuals, SOPs, forms, reference docs
+- use source-grounded Q&A for day-to-day work
+
+### E) Review pack
+- add notes, artifacts, wins, feedback, and project outputs
+- ask for impact summary, themes, evidence, and draft bullets
+
+## 8) Destructive path
 Ask before:
 - notebook deletion
 - source deletion when not obviously safe

@@ -57,6 +57,15 @@ This means concurrent agents can overwrite each other's active notebook.
 3. **Avoid `use` in parallel**
    - `notebooklm use <id>` is fine only in a single-agent flow
 
+## Work/privacy note
+
+Public user feedback consistently shows a real concern: people love NotebookLM for work, but become uneasy when uploading internal company documents without explicit policy approval.
+
+Practical rule:
+- do not treat NotebookLM as the default sink for sensitive internal documents
+- prefer public, low-risk, or explicitly approved sources unless the user's policy context is clear
+- in enterprise contexts, call this risk out directly
+
 ## Failure wording
 
 Prefer:

@@ -85,6 +85,7 @@ Use this skill when the user says:
 - [Commands](references/commands.md)
 - [Auth and isolation](references/auth-and-isolation.md)
 - [Workflows](references/workflows.md)
+- [Routes from the wild](references/routes-from-the-wild.md)
 - [Manual review checklist](references/manual-review-checklist.md)
 - [Backward compatibility map](references/backward-compat-map.md)
 - Upstream pinned repo: `references/notebooklm-py/`

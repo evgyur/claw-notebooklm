@@ -118,11 +118,28 @@ Your exported NotebookLM auth stays on your machine under `~/.notebooklm/` unles
 ## Repo layout
 
 - `SKILL.md` — OpenClaw router skill
-- `references/` — command recipes, auth, workflows, compatibility notes
+- `references/` — command recipes, auth, workflows, compatibility notes, and route ideas from real public usage
+- `research-public-usage-notes.md` — raw public research notes used to derive route ideas
 - `scripts/install.sh` — local runtime installer
 - `scripts/claw-notebook-llm.sh` — wrapper command
 - `scripts/auth_via_browser_relay.py` — Browser Relay auth export
 - `references/notebooklm-py/` — pinned upstream submodule
+
+## Route ideas from real users
+
+Based on public research, the strongest NotebookLM routes are:
+- topic-specific knowledge bases
+- interview prep notebooks
+- study packs from PDFs + lectures + YouTube
+- language-learning notebooks
+- long-book / long-doc to audio overview
+- work knowledge bases by domain
+- performance review evidence packs
+- mixed-media research dossiers
+
+See:
+- `references/routes-from-the-wild.md`
+- `research-public-usage-notes.md`
 
 ## Quick sanity check
 
