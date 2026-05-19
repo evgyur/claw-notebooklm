@@ -21,7 +21,7 @@ bash scripts/install.sh
 
 This does the following:
 - creates `.venv/` in this repo
-- installs `notebooklm-py[browser]`
+- installs `notebooklm-py[browser]` from the pinned `references/notebooklm-py` submodule when present; falls back to PyPI only if the submodule is unavailable
 - installs Playwright Chromium
 - links `claw-notebooklm` into `~/.local/bin/`
 

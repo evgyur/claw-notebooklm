@@ -29,13 +29,13 @@ Compatibility aliases:
 **Verification gate:** do not claim NotebookLM is ready, authenticated, generated, or downloaded without a direct `notebooklm` status/auth/list/wait/download check.
 
 ## What this skill does
-- uses the installed `notebooklm` CLI
+- uses the installed `notebooklm` CLI from the pinned upstream runtime
 - supports local install guidance
 - supports auth bootstrap from built-in OpenClaw Browser Relay
 - exposes route presets for the strongest real-world NotebookLM workflows
 - routes NotebookLM requests through concise, verifiable workflows
 - keeps auth, context, and multi-agent isolation explicit
-- keeps the upstream `notebooklm-py` repo pinned as a reference submodule
+- keeps the upstream `notebooklm-py` repo pinned as the install/runtime reference submodule
 
 ## Trigger
 Use this skill when the user says:

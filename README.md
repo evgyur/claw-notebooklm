@@ -5,16 +5,28 @@ OpenClaw skill for operating [NotebookLM](https://notebooklm.google.com/) throug
 ## What this gives you
 
 - create and manage NotebookLM notebooks
-- add URLs, PDFs, files, and YouTube sources
-- ask questions against notebook-only context
-- generate reports, quizzes, flashcards, mind maps, audio, and more
+- add URLs, PDFs, files, YouTube, Google Drive sources, and research imports
+- ask source-grounded questions against notebook-only context
+- generate reports, quizzes, flashcards, mind maps, data tables, audio, video, slide decks, infographics, and more
+- download generated artifacts as MP3/MP4/PDF/PPTX/PNG/CSV/JSON/Markdown/HTML where supported
+- manage sharing: public links, view level, and user permissions
 - reuse the Google account already logged into your Browser Relay browser
 
 This repo contains:
 - a public OpenClaw skill: `/claw-notebooklm`
 - install script for local runtime setup
 - auth bridge that exports NotebookLM auth from Browser Relay into `~/.notebooklm/storage_state.json`
-- upstream `notebooklm-py` pinned as a git submodule
+- upstream `notebooklm-py` pinned as a git submodule (`v0.4.1`)
+
+## Architecture
+
+`claw-notebooklm` is the OpenClaw/Hermes UX layer. It should stay thin:
+
+- upstream engine: `teng-lin/notebooklm-py`
+- OpenClaw UX: wrapper commands, Browser Relay auth bootstrap, route presets, guardrails
+- local runtime: repo-local `.venv` plus `claw-notebooklm` wrapper
+
+Do not fork NotebookLM API logic into this repo unless it is OpenClaw-specific. Prefer updating the pinned upstream submodule and command references.
 
 ## Install the skill
 
@@ -45,6 +57,8 @@ You can also call the wrapper directly:
 ```bash
 bash scripts/claw-notebooklm.sh status
 ```
+
+The installer removes a broken/incomplete `.venv` automatically before recreating it.
 
 ## Auth via Browser Relay
 
@@ -84,6 +98,13 @@ If you prefer the standard interactive flow:
 claw-notebooklm login
 ```
 
+For long-lived/headless setups, upstream also supports a one-shot keepalive:
+
+```bash
+claw-notebooklm raw auth refresh
+claw-notebooklm raw auth refresh --quiet
+```
+
 ## Usage examples
 
 ```bash
@@ -91,12 +112,17 @@ claw-notebooklm status
 claw-notebooklm raw list
 claw-notebooklm raw create "OpenClaw enterprise research"
 claw-notebooklm raw source add "https://www.youtube.com/watch?v=..."
-claw-notebooklm raw ask -n <notebook_id> "Summarize the main points"
+claw-notebooklm raw ask -n <notebook_id> "Summarize the main points" --json
+claw-notebooklm raw generate slide-deck "Board-ready story" --wait
+claw-notebooklm raw download slide-deck ./slides.pptx --format pptx
+claw-notebooklm raw share status
 ```
+
+Full recipes live in `references/commands.md`.
 
 ## Route presets
 
-The repo now exposes first-class route helpers so people can actually access the strongest NotebookLM workflows instead of reading about them only.
+The repo exposes first-class route helpers so people can access strong NotebookLM workflows instead of reading about them only.
 
 ```bash
 claw-notebooklm routes
@@ -168,11 +194,13 @@ See:
 - `presentations/claw-notebooklm-overview-ru.html`
 
 ## Practical rules from public usage
+
 - one notebook should usually map to one topic, workflow, or cycle of work
 - staged workflows beat one-shot prompting
 - validate important outputs against citations
 - audio overviews are great as a first pass, not as a final truth source
 - for work usage, be explicit about privacy and internal-doc policy
+- use explicit notebook IDs in multi-agent runs; avoid shared `notebooklm use` context unless isolated by profile/home
 
 ## Quick sanity check
 
@@ -180,10 +208,6 @@ See:
 claw-notebooklm status
 claw-notebooklm auth-relay
 claw-notebooklm routes
-claw-notebooklm route-info research-dossier
-claw-notebooklm raw list
-```
-klm routes
 claw-notebooklm route-info research-dossier
 claw-notebooklm raw list
 ```

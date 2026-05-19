@@ -8,9 +8,21 @@ LOCAL_BIN_DIR="${LOCAL_BIN_DIR:-$HOME/.local/bin}"
 
 mkdir -p "$LOCAL_BIN_DIR"
 
+if [[ -e "$VENV_DIR" && ! -x "$VENV_DIR/bin/python" ]]; then
+  echo "Removing broken virtualenv at $VENV_DIR"
+  rm -rf "$VENV_DIR"
+fi
+
 "$PYTHON_BIN" -m venv "$VENV_DIR"
 "$VENV_DIR/bin/python" -m pip install --upgrade pip setuptools wheel
-"$VENV_DIR/bin/python" -m pip install "notebooklm-py[browser]"
+
+UPSTREAM_DIR="$ROOT_DIR/references/notebooklm-py"
+if [[ -f "$UPSTREAM_DIR/pyproject.toml" ]]; then
+  "$VENV_DIR/bin/python" -m pip install -e "$UPSTREAM_DIR[browser]"
+else
+  "$VENV_DIR/bin/python" -m pip install "notebooklm-py[browser]"
+fi
+
 "$VENV_DIR/bin/python" -m playwright install chromium
 
 ln -sf "$ROOT_DIR/scripts/claw-notebooklm.sh" "$LOCAL_BIN_DIR/claw-notebooklm"
